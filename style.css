@@ -88,12 +88,32 @@ section{
 
 .block2{
     width:100%;
+    position: relative;   /* ← добавь эту строку внутрь .block2 */
 }
 
 .block2-img{
     width:100%;
     height:auto;
     display:block;
+}
+
+/* ===== НОВЫЙ КОД ДЛЯ ИМЕНИ ===== */
+.guest-welcome {
+    position: absolute;
+    top: 50%;             /* подбери под свой дизайн: 40%, 60% и т.д. */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;       /* цвет текста — поменяй, если фон светлый */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    z-index: 2;
+    width: 90%;
+}
+
+#guestName {
+    color: #c9a227;       /* золотистый, как таймер */
+    font-weight: bold;
 }
 
 /* БЛОК 3 */
