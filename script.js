@@ -80,3 +80,18 @@ const revealObserver = new IntersectionObserver(
 revealElements.forEach(element => {
     revealObserver.observe(element);
 });
+// ===== ПЕРСОНАЛИЗАЦИЯ ИМЕНИ =====
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const guestId = urlParams.get('id');
+    const guestNameElement = document.getElementById('guestName');
+    
+    if (guestNameElement) {
+        const guest = GUESTS.find(g => g.id === guestId);
+        if (guest) {
+            guestNameElement.textContent = guest.name;
+        } else {
+            guestNameElement.textContent = 'гость';
+        }
+    }
+});

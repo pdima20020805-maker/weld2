@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Ссылки для гостей</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        h1 { color: #333; }
+        .link-item {
+            background: #fff;
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border-left: 4px solid #c9a227;
+            font-size: 14px;
+            word-break: break-all;
+        }
+        .name { font-weight: bold; color: #8b0000; font-size: 15px; }
+        .link { color: #555; margin-top: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Ссылки для гостей</h1>
+    <p>Скопируй нужную ссылку и отправь гостю.</p>
+    <div id="output"></div>
+
+    <!-- Подключаем список гостей -->
+    <script src="guests.js"></script>
+
+    <script>
+        // ⚠️ ЗАМЕНИ НА СВОЙ АДРЕС САЙТА
+        const BASE_URL = 'https://pdima20020805-maker.github.io/weld2/';
+
+        const output = document.getElementById('output');
+
+        GUESTS.forEach(guest => {
+            const link = `${BASE_URL}?id=${guest.id}`;
+            const div = document.createElement('div');
+            div.className = 'link-item';
+            div.innerHTML = `<div class="name">${guest.name}</div><div class="link">${link}</div>`;
+            output.appendChild(div);
+        });
+    </script>
+</body>
+</html>
